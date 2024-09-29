@@ -21,13 +21,12 @@ const ContactForm = ({ addContact }) => {
       initialValues={{ name: '', number: '' }}
       validationSchema={validationSchema}
       onSubmit={(values, { resetForm }) => {
-        // Додавання нового контакту до списку
         const newContact = {
           id: nanoid(),
           ...values,
         };
         addContact(newContact);
-        resetForm(); // Очищення форми після сабміту
+        resetForm(); 
       }}
     >
       {() => (
